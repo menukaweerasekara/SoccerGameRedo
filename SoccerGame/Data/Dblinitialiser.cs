@@ -10,10 +10,10 @@ namespace SoccerGame.Data
     {
         public static void Initialize(GameContext context)
         {
-            //context.Database.EnsureCreated();
+          context.Database.EnsureCreated();
 
             // Look for any students.
-            if (context.Players.Any())
+            if (context.Player.Any())
             {
                 return;   // DB has been seeded
             }
@@ -51,7 +51,7 @@ namespace SoccerGame.Data
 
             };
 
-            context.Players.AddRange(players);
+            context.Player.AddRange(players);
             context.SaveChanges();
 
             var teams = new Team[]
@@ -79,7 +79,7 @@ namespace SoccerGame.Data
 
             };
 
-            context.Teams.AddRange(teams);
+            context.Team.AddRange(teams);
             context.SaveChanges();
 
 
@@ -94,7 +94,7 @@ namespace SoccerGame.Data
                new Division {Division_Name = "USL League Two ", Location = "New Zealand" }
             };
 
-            context.Divisions.AddRange(divisions);
+            context.Division.AddRange(divisions);
             context.SaveChanges();
 
 

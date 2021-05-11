@@ -12,7 +12,6 @@ namespace SoccerGame.Models
         public string PlayerName { get; set; }
 
 
-
         public int Age { get; set; }
 
         public string Position { get; set; }

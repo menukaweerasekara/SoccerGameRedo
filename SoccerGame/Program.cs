@@ -26,7 +26,7 @@ namespace SoccerGame
                 try
                 {
                     var context = services.GetRequiredService<GameContext>();
-                   // context.Database.EnsureCreated();
+                    context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

@@ -37,7 +37,7 @@ namespace SoccerGame.Pages.Teams
                 return Page();
             }
 
-            _context.Team.Add(Team);
+            _context.Teams.Add(Team);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

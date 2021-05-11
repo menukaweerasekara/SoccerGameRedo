@@ -13,7 +13,7 @@ namespace SoccerGame.Data
           context.Database.EnsureCreated();
 
             // Look for any students.
-            if (context.Player.Any())
+            if (context.Players.Any())
             {
                 return;   // DB has been seeded
             }
@@ -51,7 +51,7 @@ namespace SoccerGame.Data
 
             };
 
-            context.Player.AddRange(players);
+            context.Players.AddRange(players);
             context.SaveChanges();
 
             var teams = new Team[]
@@ -79,7 +79,7 @@ namespace SoccerGame.Data
 
             };
 
-            context.Team.AddRange(teams);
+            context.Teams.AddRange(teams);
             context.SaveChanges();
 
 
@@ -94,7 +94,7 @@ namespace SoccerGame.Data
                new Division {Division_Name = "USL League Two ", Location = "New Zealand" }
             };
 
-            context.Division.AddRange(divisions);
+            context.Divisions.AddRange(divisions);
             context.SaveChanges();
 
 

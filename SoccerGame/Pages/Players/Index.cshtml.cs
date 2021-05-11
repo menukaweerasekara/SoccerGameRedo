@@ -23,7 +23,7 @@ namespace SoccerGame.Pages.Players
 
         public async Task OnGetAsync()
         {
-            Player = await _context.Player
+            Player = await _context.Players
                 .Include(p => p.Teams).ToListAsync();
         }
     }

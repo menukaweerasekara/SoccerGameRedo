@@ -28,7 +28,7 @@ namespace SoccerGame.Pages.Players
                 return NotFound();
             }
 
-            Player = await _context.Player
+            Player = await _context.Players
                 .Include(p => p.Teams).FirstOrDefaultAsync(m => m.PlayerID == id);
 
             if (Player == null)

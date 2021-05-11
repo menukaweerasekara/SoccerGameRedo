@@ -30,7 +30,7 @@ namespace SoccerGame.Pages.Teams
                 return NotFound();
             }
 
-            Team = await _context.Team
+            Team = await _context.Teams
                 .Include(t => t.Divisions).FirstOrDefaultAsync(m => m.TeamID == id);
 
             if (Team == null)
@@ -73,7 +73,7 @@ namespace SoccerGame.Pages.Teams
 
         private bool TeamExists(int id)
         {
-            return _context.Team.Any(e => e.TeamID == id);
+            return _context.Teams.Any(e => e.TeamID == id);
         }
     }
 }

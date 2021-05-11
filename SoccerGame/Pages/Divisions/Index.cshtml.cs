@@ -23,7 +23,7 @@ namespace SoccerGame.Pages.Divisions
 
         public async Task OnGetAsync()
         {
-            Division = await _context.Division.ToListAsync();
+            Division = await _context.Divisions.ToListAsync();
         }
     }
 }

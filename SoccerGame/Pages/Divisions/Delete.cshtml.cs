@@ -29,7 +29,7 @@ namespace SoccerGame.Pages.Divisions
                 return NotFound();
             }
 
-            Division = await _context.Division.FirstOrDefaultAsync(m => m.DivisionID == id);
+            Division = await _context.Divisions.FirstOrDefaultAsync(m => m.DivisionID == id);
 
             if (Division == null)
             {
@@ -45,11 +45,11 @@ namespace SoccerGame.Pages.Divisions
                 return NotFound();
             }
 
-            Division = await _context.Division.FindAsync(id);
+            Division = await _context.Divisions.FindAsync(id);
 
             if (Division != null)
             {
-                _context.Division.Remove(Division);
+                _context.Divisions.Remove(Division);
                 await _context.SaveChangesAsync();
             }
 

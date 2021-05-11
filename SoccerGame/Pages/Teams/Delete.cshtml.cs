@@ -29,7 +29,7 @@ namespace SoccerGame.Pages.Teams
                 return NotFound();
             }
 
-            Team = await _context.Team
+            Team = await _context.Teams
                 .Include(t => t.Divisions).FirstOrDefaultAsync(m => m.TeamID == id);
 
             if (Team == null)
@@ -46,11 +46,11 @@ namespace SoccerGame.Pages.Teams
                 return NotFound();
             }
 
-            Team = await _context.Team.FindAsync(id);
+            Team = await _context.Teams.FindAsync(id);
 
             if (Team != null)
             {
-                _context.Team.Remove(Team);
+                _context.Teams.Remove(Team);
                 await _context.SaveChangesAsync();
             }
 

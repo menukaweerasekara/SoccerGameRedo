@@ -30,7 +30,7 @@ namespace SoccerGame.Pages.Players
                 return NotFound();
             }
 
-            Player = await _context.Player
+            Player = await _context.Players
                 .Include(p => p.Teams).FirstOrDefaultAsync(m => m.PlayerID == id);
 
             if (Player == null)
@@ -73,7 +73,7 @@ namespace SoccerGame.Pages.Players
 
         private bool PlayerExists(int id)
         {
-            return _context.Player.Any(e => e.PlayerID == id);
+            return _context.Players.Any(e => e.PlayerID == id);
         }
     }
 }

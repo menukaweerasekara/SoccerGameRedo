@@ -36,7 +36,7 @@ namespace SoccerGame.Pages.Divisions
                 return Page();
             }
 
-            _context.Division.Add(Division);
+            _context.Divisions.Add(Division);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -2,34 +2,39 @@
 @model SoccerGame.Pages.Players.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Players";
 }
 
-<h1>Index</h1>
-
+<h2>Players</h2>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Add New Player </a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].PlayerName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Players[0].PlayerName)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].Age)
+                @Html.DisplayNameFor(model => model.Players[0].Age)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].Position)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.Players[0].Position)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Player[0].Teams)
+                @Html.DisplayNameFor(model => model.Players[0].Teams)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Player) {
+        @foreach (var item in Model.Players)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PlayerName)
@@ -41,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.Position)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Teams.TeamName)
+                @Html.DisplayFor(modelItem => item.Teams)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.PlayerID">Edit</a> |
@@ -49,6 +54,6 @@
                 <a asp-page="./Delete" asp-route-id="@item.PlayerID">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

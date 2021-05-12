@@ -24,16 +24,22 @@ namespace SoccerGame.Pages.Players
         public string CurrentSort { get; set; }
 
         public IList<Player> Players { get; set; }
+      
+        public async Task OnGetAsync(string sortOrder, string searchString)
 
-        public async Task OnGetAsync(string sortOrder)
-        {
+               {
             // using System;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            CurrentFilter = searchString;
 
             IQueryable<Player> playersIQ = from s in _context.Players
                                            select s;
-
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                playersIQ = playersIQ.Where(s => s.Position.Contains(searchString)
+                                       || s.PlayerName.Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "name_desc":

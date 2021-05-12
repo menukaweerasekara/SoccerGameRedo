@@ -9,8 +9,8 @@ using SoccerGame.Data;
 namespace SoccerGame.Migrations
 {
     [DbContext(typeof(GameContext))]
-    [Migration("20210511023546_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210512005259_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -87,7 +87,7 @@ namespace SoccerGame.Migrations
             modelBuilder.Entity("SoccerGame.Models.Player", b =>
                 {
                     b.HasOne("SoccerGame.Models.Team", "Teams")
-                        .WithMany("Players")
+                        .WithMany()
                         .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -96,7 +96,7 @@ namespace SoccerGame.Migrations
             modelBuilder.Entity("SoccerGame.Models.Team", b =>
                 {
                     b.HasOne("SoccerGame.Models.Division", "Divisions")
-                        .WithMany("Teams")
+                        .WithMany()
                         .HasForeignKey("DivisionID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

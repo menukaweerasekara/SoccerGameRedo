@@ -13,7 +13,5 @@ namespace SoccerGame.Models
 
         public string Location { get; set; }
 
-        public ICollection<Team> Teams { get; set; }
-
-    }
+           }
 }

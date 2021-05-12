@@ -10,7 +10,7 @@ namespace SoccerGame.Data
         public static void Initialize(GameContext context)
         {
           context.Database.EnsureCreated();
-
+       
             // Look for any students.
             if (context.Players.Any())
             {
@@ -21,7 +21,7 @@ namespace SoccerGame.Data
             var divisions = new Division[]
 {
                new Division {Division_Name = "Major League", Location = "USA"},
-            new Division {Division_Name = "USL Championship", Location = "UK" },
+               new Division {Division_Name = "USL Championship", Location = "UK" },
                new Division {Division_Name = "USL League One ", Location = "Canda"},
                new Division {Division_Name = "USL League Two ", Location = "New Zealand" }
 };
@@ -32,24 +32,24 @@ namespace SoccerGame.Data
 
             var teams = new Team[]
             {
-                new Team{TeamName = "Manchester", DivisionID = 1},
-                new Team{TeamName = "LiverPool", DivisionID = 1},
-                new Team{TeamName = "Chelsea", DivisionID = 1},
+                new Team {TeamName = "Manchester", DivisionID = 1},
+                new Team {TeamName = "LiverPool", DivisionID = 1},
+                new Team {TeamName = "Chelsea", DivisionID = 1},
 
 
-                new Team{TeamName = "Arsenal  ", DivisionID = 2},
-                new Team{TeamName = "Inter Milan", DivisionID = 2},
-                new Team{TeamName = "Barcelona", DivisionID = 2},
+                new Team {TeamName = "Arsenal  ", DivisionID = 2},
+                new Team {TeamName = "Inter Milan", DivisionID = 2},
+                new Team {TeamName = "Barcelona", DivisionID = 2},
 
 
-                new Team{TeamName = "Tottemham", DivisionID = 3},
-                new Team{ TeamName = "Juventus", DivisionID = 3},
-                new Team{TeamName = "A.C Milan", DivisionID = 3},
+                new Team {TeamName = "Tottemham", DivisionID = 3},
+                new Team {TeamName = "Juventus", DivisionID = 3},
+                new Team {TeamName = "A.C Milan", DivisionID = 3},
 
 
-                new Team{ TeamName = "Roma", DivisionID = 4},
-                new Team{TeamName = "Galaxy", DivisionID = 4},
-                new Team{TeamName = "Toronto", DivisionID = 4}
+                new Team {TeamName = "Roma", DivisionID = 4},
+                new Team {TeamName = "Galaxy", DivisionID = 4},
+                new Team {TeamName = "Toronto", DivisionID = 4}
 
 
 
@@ -80,15 +80,14 @@ namespace SoccerGame.Data
                 new Player{PlayerName = "Taslima Merritt", Age = 16, Position = "Attacker", TeamID = 3},
                 new Player{PlayerName = "Don Ryan", Age = 16, Position = "Defender", TeamID = 3},
 
-                 new Player{PlayerName = "Theresa Stevens", Age = 16, Position = "Defender", TeamID = 4},
-                new Player{PlayerName = "Mateo Reader", Age = 16, Position = "Midfielder", TeamID = 4},
-                new Player{PlayerName = "Johnny Waller", Age = 16, Position = "Goalkeeper", TeamID = 4},
-                new Player{PlayerName = "Rayan Hoover", Age = 16, Position = "Attacker", TeamID = 4},
-                new Player{PlayerName = "Norah Redman", Age = 16, Position = "Attacker", TeamID = 4},
-                new Player{PlayerName = "Rahul Enriquez", Age = 16, Position = "Defender", TeamID = 4}
+                 new Player {PlayerName = "Theresa Stevens", Age = 16, Position = "Defender", TeamID = 4},
+                new Player {PlayerName = "Mateo Reader", Age = 16, Position = "Midfielder", TeamID = 4},
+                new Player {PlayerName = "Johnny Waller", Age = 16, Position = "Goalkeeper", TeamID = 4},
+                new Player {PlayerName = "Rayan Hoover", Age = 16, Position = "Attacker", TeamID = 4},
+                new Player {PlayerName = "Norah Redman", Age = 16, Position = "Attacker", TeamID = 4},
+                new Player {PlayerName = "Rahul Enriquez", Age = 16, Position = "Defender", TeamID = 4}
 
             
-
 
 };
 

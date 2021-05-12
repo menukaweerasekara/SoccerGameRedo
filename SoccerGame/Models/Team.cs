@@ -16,11 +16,6 @@ namespace SoccerGame.Models
 
         public Division Divisions { get; set; }
 
-        public ICollection<Player> Players { get; set; }
-
-
-
-
-
+        
     }
 }

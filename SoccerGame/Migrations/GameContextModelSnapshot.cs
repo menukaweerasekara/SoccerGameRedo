@@ -85,7 +85,7 @@ namespace SoccerGame.Migrations
             modelBuilder.Entity("SoccerGame.Models.Player", b =>
                 {
                     b.HasOne("SoccerGame.Models.Team", "Teams")
-                        .WithMany("Players")
+                        .WithMany()
                         .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -94,7 +94,7 @@ namespace SoccerGame.Migrations
             modelBuilder.Entity("SoccerGame.Models.Team", b =>
                 {
                     b.HasOne("SoccerGame.Models.Division", "Divisions")
-                        .WithMany("Teams")
+                        .WithMany()
                         .HasForeignKey("DivisionID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
